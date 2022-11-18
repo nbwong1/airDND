@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito+Sans:wght@300;400&family=Playfair+Display&family=Poppins&family=Roboto&display=swap");
+
+.navW {
+  width: 100%;
+}
+.bNavT {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+.bNavTM {
+  font-family: "Alegreya SC", serif;
+  font-weight: 400;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+.sideDiv {
+  background-color: burlywood;
+  padding: 10px 10px 10px 10px black solid;
+  margin-bottom: 0%;
+  width: 40%;
+}
+
+.middleDiv {
+  background-color: burlywood;
+  /* border-radius: 50%; */
+  border: 10px black;
+  width: 20%;
+}
+.alignDivs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.alignDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
