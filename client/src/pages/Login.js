@@ -48,17 +48,17 @@ const Login = (props) => {
           <div className="card-body">
             {data ? (
               <p>
-                Success! {' '}
-                <Link to="/">Homepage.</Link>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
-                  placeholder="Username"
-                  name="Username"
-                  type="Username"
-                  value={formState.username}
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
                   onChange={handleChange}
                 />
                 <input
