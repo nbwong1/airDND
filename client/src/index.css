@@ -1706,3 +1706,18 @@ label form [type='radio'] {
     align-content: center;
   }
 }
+
+footer.w-100{
+  background: url('./footerbkgd.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position:center;
+  height:200px;
+  position:fixed;
+  bottom:0;
+}
+footer div h4{
+  margin-top:120px;
+  color: #fff;
+  font-size: 15px;
+}
