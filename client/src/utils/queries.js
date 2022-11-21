@@ -21,9 +21,15 @@ export const QUERY_CHARACTER = gql`
       _id
       name
       level
-      background
+      class
       alignment
       experience
+      strenght
+      dexterity
+      constitution
+      intelligence
+      wisdom
+      charisma
       characterAuthor
       createdAt
     }

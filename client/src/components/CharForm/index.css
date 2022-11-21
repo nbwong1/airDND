@@ -1,0 +1,222 @@
+.box {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/188/340/340/636771210370826107.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+
+.barbarian {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/187/340/340/636771210176732976.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.bard {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/188/340/340/636771210370826107.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.cleric {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/192/340/340/636771210659206541.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.druid {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/193/340/340/636771210953582280.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.fighter {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/196/340/340/636771211243925649.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.monk {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/198/340/340/636771211453159586.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.paladin {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/200/340/340/636771211793932705.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.ranger {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/202/340/340/636771212023190165.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.rogue {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/206/340/340/636771212243378100.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.sorcerer {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/208/340/340/636771212509661854.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.warlock {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/209/340/340/636771212694225349.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.wizard {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/4808/213/340/340/636771212938995926.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.artificer {
+  background-image: url("https://www.dndbeyond.com/avatars/thumbnails/7116/589/340/340/637037885363790565.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  width: 100%;
+  height: 400px;
+  /* position: absolute; */
+  opacity: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(216, 231, 231);
+}
+.textBox {
+  position: left 500px;
+  height: 85%;
+  width: 70%;
+  margin-top: 10px;
+  margin-left: 10px;
+  /* max-height: 305px; */
+  overflow: hidden;
+  padding: 8px;
+  border: 1px solid #e0dcdc;
+  box-shadow: -2px -1px 2px 0 #e0dcdc;
+  background: rgba(250, 250, 250, 0.9);
+  /* display: flex; */
+  /* align-items: flex-start; */
+}
+
+.classT {
+  text-decoration: underline rgb(255, 208, 0) 4px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.statbox {
+  border-top: red solid 3px;
+  width: 100%;
+  height: 100px;
+  background-color: rgb(0, 0, 0);
+}
+
+.statText {
+  color: red;
+  max-width: fit-content;
+}
+.statLine {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

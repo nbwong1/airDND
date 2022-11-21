@@ -27,23 +27,41 @@ export const ADD_CHARACTER = gql`
   mutation addCharacter(
     $name: String!
     $level: Int!
-    $background: String!
+    $class: String!
     $alignment: String!
     $experience: Int!
+    $strenght: Int!
+    $dexterity: Int!
+    $constitution: Int!
+    $intelligence: Int!
+    $wisdom: Int!
+    $charisma: Int!
   ) {
     addCharacter(
       name: $name
       level: $level
-      background: $background
+      class: $class
       alignment: $alignment
       experience: $experience
+      strenght: $strenght
+      dexterity: $dexterity
+      constitution: $constitution
+      intelligence: $intelligence
+      wisdom: $wisdom
+      charisma: $charisma
     ) {
       _id
       name
       level
-      background
+      class
       alignment
       experience
+      strenght
+      dexterity
+      constitution
+      intelligence
+      wisdom
+      charisma
       characterAuthor
       createdAt
     }
