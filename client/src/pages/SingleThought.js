@@ -21,7 +21,7 @@ const SingleThought = () => {
   const thought = data?.thought || {};
 
   if (loading) {
-    return <div>Loading</div>;
+    return <div>Loading...</div>;
   }
   return (
     <div className="my-3">
