@@ -19,12 +19,18 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  thoughts: [
+  meetups: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Thought',
+      ref: 'Meetup',
     },
   ],
+  charForms: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'CharForm'
+    }
+  ]
 });
 
 userSchema.pre('save', async function (next) {
