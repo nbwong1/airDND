@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       token
       user {
         _id
@@ -24,7 +24,7 @@ export const ADD_USER = gql`
   }
 `;
 export const ADD_CHARACTER = gql`
-  mutation addCharacter(
+  mutation addCharForm(
     $name: String!
     $level: Int!
     $class: String!
@@ -68,13 +68,47 @@ export const ADD_CHARACTER = gql`
   }
 `;
 
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+// export const ADD_THOUGHT = gql`
+//   mutation addThought($thoughtText: String!) {
+//     addThought(thoughtText: $thoughtText) {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//       }
+//     }
+//   }
+// `;
+
+export const ADD_MEETUP = gql`
+  mutation addMeetup(
+    $dateTime: String!
+    $campaignName: String!
+    $campaignDescription: String!
+    $campaignDuration: String!
+    $campaignPartySize: String!
+    $meetupAddress: String!
+  ) {
+    addMeetup(
+      dateTime: $dateTime
+      campaignName: $campaignName
+      campaignDescription: $campaignDescription
+      campaignDuration: $campaignDuration
+      campaignPartySize: $campaignPartySize
+      meetupAddress: $meetupAddress
+    ) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      dateTime
+      campaignName
+      campaignDescription
+      campaignDuration
+      campaignPartySize
+      meetupAddress
+      meetupCreatedAt
+      host
       comments {
         _id
         commentText
@@ -84,12 +118,17 @@ export const ADD_THOUGHT = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
+  mutation addComment($meetupId: ID!, $commentText: String!) {
+    addComment(meetupId: $meetupId, commentText: $commentText) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      dateTime
+      campaignName
+      campaignDescription
+      campaignDuration
+      campaignPartySize
+      meetupAddress
+      meetupCreatedAt
+      host
       comments {
         _id
         commentText
