@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import Auth from '../../utils/auth';
 
 const Footer = () => {
   const location = useLocation();
@@ -15,18 +16,13 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
-        <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-          by the Tech Thoughts team.
-        </h4>
+        {Auth.loggedIn() ? (
+          <h4>
+          {Auth.getProfile().data.username}
+          </h4>
+        ) : (
+          <h4>Welcome User</h4>
+        )}
       </div>
     </footer>
   );
