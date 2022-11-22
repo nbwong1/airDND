@@ -1,21 +1,27 @@
-import { React, useState } from "react";
-import "./index.css";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+
+import { ADD_THOUGHT } from "../../utils/mutations";
+import { QUERY_THOUGHTS, QUERY_ME } from "../../utils/queries";
+import Auth from "../../utils/auth";
+
 const CharForm = () => {
   const [charFormData, setcharFormData] = useState({
     name: "",
-    level: "",
+    level: 0,
     race: "",
     class: "",
     alignment: "",
-    experience: "",
+    experience: 0,
     class: "",
     // stats
-    strenght: "",
-    dexterity: "",
-    constitution: "",
-    intelligence: "",
-    wisdom: "",
-    charisma: "",
+    strenght: 0,
+    dexterity: 0,
+    constitution: 0,
+    intelligence: 0,
+    wisdom: 0,
+    charisma: 0,
   });
 
   const handleInputChange = (event) => {
@@ -25,33 +31,6 @@ const CharForm = () => {
 
   return (
     <div>
-      <div>
-        <div className="wizard">
-          <div className=" textBox">
-            <div>
-              <h4 className="classT">class</h4>
-              <p>name:</p>
-              <p>lvl.</p>
-              <p>race</p>
-              <p>alignment</p>
-              <p>experience</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="statbox">
-          <div className="statLine">
-            <p className="statText">STR:</p>
-            <p className="statText">DEX:</p>
-            <p className="statText">CON:</p>
-          </div>
-          <div className="statLine">
-            <p className="statText">INT:</p>
-            <p className="statText">WIS:</p>
-            <p className="statText">CHA:</p>
-          </div>
-        </div>
-      </div>
       <form>
         <div class="form-group">
           <label for="formGroupExampleInput">Name:</label>
@@ -89,9 +68,9 @@ const CharForm = () => {
         <div class="form-group">
           <label for="formGroupExampleInput">Class:</label>
           <input
-            type="text"
+            type="list"
             class="form-control"
-            id="formGroupExampleInput"
+            id="class"
             placeholder="Class"
             name="class"
             onChange={handleInputChange}
