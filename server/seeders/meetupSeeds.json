@@ -1,0 +1,47 @@
+[
+  {
+    "dateTime" : "11/29/2022 4:00 PM",
+    "host" : "nickeats",
+    "campaignName" : "Trolls ate my pie",
+    "campaignDescription" : "I was in the middle of baking, when all of a sudden a group of trolls comes in and eats my pies!",
+    "campaignDuration" : "30 minutes",
+    "campaignPartySize" : "2",
+    "meetupAddress" : "1 Home Way, San Diego, CA 92126"
+  },
+  {
+    "dateTime" : "11/30/2022 5:00 PM",
+    "host" : "kevinluvs2dance",
+    "campaignName" : "Escape the Hospital",
+    "campaignDescription" : "One day I wake up, and I'm in a hospital... luckily for me, my friends are there to help me escape!",
+    "campaignDuration" : "1 hour",
+    "campaignPartySize" : "5",
+    "meetupAddress" : "2 Hospital Ave, 5th Floor, San Diego, CA 92121"
+  },
+  {
+    "dateTime" : "12/01/2022 1:00 PM",
+    "host" : "jonattheworldcup",
+    "campaignName" : "Where's my vuvuzela",
+    "campaignDescription" : "The day before the World Cup begins and the ban on Vuvuzelas has been uplifted. Where do I go to get a new one?",
+    "campaignDuration" : "5 days",
+    "campaignPartySize" : "3",
+    "meetupAddress" : "3 FIFA Ave, Room 6294, San Diego, CA 92037"
+  },
+  {
+    "dateTime" : "12/02/2022 2:00 PM",
+    "host" : "andybirdsing",
+    "campaignName" : "On the quest for magical birdseed",
+    "campaignDescription" : "Unfortunately, Andy's bird is sick, and the only cure is a birdseed mix with specially made birdseed. Help Andy get that special seed!",
+    "campaignDuration" : "2 days",
+    "campaignPartySize" : "6",
+    "meetupAddress" : "10 Canaries Dr, San Diego, CA 92127"
+  },
+  {
+    "dateTime" : "12/03/2022 11:00 AM",
+    "host" : "stewfoo",
+    "campaignName" : "The Dancing Hut Of Baba Yaga",
+    "campaignDescription" : "In this campaign, the party must explore the hut of Baba Yaga. Baba Yaga seeks immortality and can control the night and day cycle of any world in which her hut appears. This incredibly powerful being lives in what appears to be a small hut sitting atop giant bird legs. However, the hut is much like Doctor Who's T.A.R.D.I.S. in that it is bigger on the inside.",
+    "campaignDuration" : "3 days",
+    "campaignPartySize" : "7",
+    "meetupAddress" : "Babayaga's House"
+  }
+]

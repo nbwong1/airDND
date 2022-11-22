@@ -1,20 +1,41 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
-
-const thoughtSchema = new Schema({
-  thoughtText: {
-    type: String,
-    required: 'You need to leave a thought!',
-    minlength: 1,
-    maxlength: 280,
-    trim: true,
+const meetupSchema = new Schema({
+  dateTime: {
+    type: Date,
+    required: true,
   },
-  thoughtAuthor: {
+  host: {
     type: String,
     required: true,
     trim: true,
   },
-  createdAt: {
+  campaignName: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  campaignDescription: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  campaignDuration: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  campaignPartySize: {
+    type: Number,
+    required: true,
+    default: 2,
+  },
+  meetupAddress: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  meetupCreatedAt: {
     type: Date,
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
@@ -39,7 +60,5 @@ const thoughtSchema = new Schema({
     },
   ],
 });
-
-const Thought = model('Thought', thoughtSchema);
-
-module.exports = Thought;
+const Meetup = model('Meetup', meetupSchema);
+module.exports = Meetup;
