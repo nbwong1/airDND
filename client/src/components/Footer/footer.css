@@ -27,7 +27,8 @@
   font-weight: 400;
   font-size: 2em;
   text-align: center;
-  color: black;
+  color: white;
+  margin-top:140px;
 }
 .sideDiv {
   background-color: burlywood;
@@ -37,8 +38,8 @@
 }
 
 .middleDiv {
-  background-color: burlywood;
-  /* border-radius: 50%; */
+  /*background-color: burlywood;
+  border-radius: 50%; */
   border: 10px black;
   width: 20%;
 }
