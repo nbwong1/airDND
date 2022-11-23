@@ -920,7 +920,17 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-image: url("https://cdn.vox-cdn.com/thumbor/Da_3QipSm4IeXq6TNeOeuh2-Otk=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/23028057/Saltmarsh_DnD_Articles_Header_Image.jpg") !important;
+  max-width: 100%;
+  height: auto;
+  background-repeat: round;
+  opacity: 1;
+  /* position: absolute; */
+  opacity: 100;
+  display: flex;
+  align-items: flex-start;
+
+
 }
 
 .bg-info {
@@ -1030,21 +1040,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
+  background-color: #ff0000;
+  color: #000000;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #ffffff;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #000000;
+  color: #ff0000;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #ffffff;
 }
 
 .btn.btn-dark {
