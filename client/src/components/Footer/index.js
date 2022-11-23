@@ -23,12 +23,6 @@ const Footer = () => {
         {Auth.loggedIn() ? (
           <>
             <div className=" alignDivs">
-              <div className="sideDiv">
-                <Link className="" to="/">
-                  <h1 className=" bNavT">Meetups</h1>
-                </Link>
-              </div>
-
               <div style={styles.Padding} className="middleDiv alignDiv ">
                 <Link className="alignDiv" to="/me">
                   <h1 className="bNavTM alignDiv">
@@ -36,12 +30,6 @@ const Footer = () => {
                     {Auth.getProfile().data.username}'s profile
                   </h1>
                 </Link>
-              </div>
-
-              <div className="sideDiv">
-                <h1 className="bNavT" onClick={logout}>
-                  Logout
-                </h1>
               </div>
             </div>
           </>
