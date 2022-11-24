@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_CHARACTER } from "../../utils/mutations";
-import { QUERY_MEETUPS, QUERY_ME } from "../../utils/queries";
+import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 
 const CharForm = () => {
@@ -22,7 +22,31 @@ const CharForm = () => {
     wisdom: 0,
     charisma: 0,
   });
-  const [addCharacter, { error }] = useMutation(ADD_CHARACTER);
+  const [addCharForm, { error }] = useMutation(ADD_CHARACTER, {
+    update(cache, data, addCharForm) {
+      try {
+        const { charForms } = cache.readQuery({ query: QUERY_CHARACTER });
+
+        cache.writeQuery({
+          query: QUERY_CHARACTER,
+          data: { charForms: [addCharForm, ...charForms] },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+
+      // update me object's cache
+      try {
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, charForms: [...me.charForms, addCharForm] } },
+        });
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -34,12 +58,11 @@ const CharForm = () => {
     event.preventDefault();
 
     try {
-      const { data } = await addCharacter({
+      const { data } = await addCharForm({
         variables: {
           ...charFormData,
         },
       });
-
       setcharFormData({
         name: "",
         level: 0,

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import CharForm from "../components/CharForm";
@@ -42,7 +42,9 @@ const Profile = () => {
         <div className="column">
           <CharForm />
 
-          <CharCard />
+          <CharCard
+          //  charForm={user.charForms}
+          />
           <br />
         </div>
         {/* CharForm */}

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./index.css";
+import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
 
 const CharCard = () => {
+  // console.log(charForms);
   return (
     <div>
       <div className="wizard">

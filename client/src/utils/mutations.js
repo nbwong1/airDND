@@ -37,7 +37,7 @@ export const ADD_CHARACTER = gql`
     $wisdom: Int!
     $charisma: Int!
   ) {
-    addCharacter(
+    addCharForm(
       name: $name
       level: $level
       class: $class
@@ -84,8 +84,22 @@ export const ADD_CHARACTER = gql`
 // `;
 
 export const ADD_MEETUP = gql`
-  mutation addMeetup($dateTime: String!,$campaignName: String!, $campaignDescription: String!,$campaignDuration: String!, $campaignPartySize: String!, $meetupAddress: String!) {
-    addMeetup(dateTime: $dateTime, campaignName: $campaignName, campaignDescription: $campaignDescription, campaignDuration: $campaignDuration, campaignPartySize: $campaignPartySize, meetupAddress: $meetupAddress) {
+  mutation addMeetup(
+    $dateTime: String!
+    $campaignName: String!
+    $campaignDescription: String!
+    $campaignDuration: String!
+    $campaignPartySize: String!
+    $meetupAddress: String!
+  ) {
+    addMeetup(
+      dateTime: $dateTime
+      campaignName: $campaignName
+      campaignDescription: $campaignDescription
+      campaignDuration: $campaignDuration
+      campaignPartySize: $campaignPartySize
+      meetupAddress: $meetupAddress
+    ) {
       _id
       dateTime
       campaignName

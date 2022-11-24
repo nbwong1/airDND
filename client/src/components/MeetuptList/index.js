@@ -11,7 +11,6 @@ const meetuptList = ({
   if (!meetups.length) {
     return <h3>No meetups Yet</h3>;
   }
-
   return (
     <div>
       {showTitle && <h3>{title}</h3>}
