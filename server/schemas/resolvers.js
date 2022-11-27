@@ -1,27 +1,37 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { User, Meetup, CharForm } = require("../models");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
     users: async () => {
-      return User.find().populate('thoughts');
+      return User.find().populate("meetups").populate("charForms");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('thoughts');
+      return User.findOne({ username })
+        .populate("meetups")
+        .populate("charForms");
     },
-    thoughts: async (parent, { username }) => {
+    meetups: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Thought.find(params).sort({ createdAt: -1 });
+      return Meetup.find(params).sort({ createdAt: -1 });
     },
-    thought: async (parent, { thoughtId }) => {
-      return Thought.findOne({ _id: thoughtId });
+    meetup: async (parent, { meetupId }) => {
+      return Meetup.findOne({ _id: meetupId });
+    },
+    charForms: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return CharForm.find(params).sort({ createdAt: -1 });
+    },
+
+    charForm: async (parent, { charFormId }) => {
+      return CharForm.findOne({ _id: charFormId });
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate('thoughts');
+        return User.findOne({ _id: context.user._id }).populate("meetups").populate("charForms");
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 
@@ -35,39 +45,56 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('No user found with this email address');
+        throw new AuthenticationError("No user found with this email address");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => {
+    // addMeetup with the following campaignName, campaignDescription, campaignPartySize, host, dateTime, meetupAddress
+    addMeetup: async (
+      parent,
+      {
+        dateTime,
+        campaignName,
+        campaignDescription,
+        campaignDuration,
+        campaignPartySize,
+        meetupAddress,
+      },
+      context
+    ) => {
       if (context.user) {
-        const thought = await Thought.create({
-          thoughtText,
-          thoughtAuthor: context.user.username,
+        const meetup = await Meetup.create({
+          dateTime,
+          host: context.user.username,
+          campaignName,
+          campaignDescription,
+          campaignDuration,
+          campaignPartySize,
+          meetupAddress,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
+          { $addToSet: { meetups: meetup._id } }
         );
 
-        return thought;
+        return meetup;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
-    addComment: async (parent, { thoughtId, commentText }, context) => {
+    addComment: async (parent, { meetupId, commentText }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return Meetup.findOneAndUpdate(
+          { _id: meetupId },
           {
             $addToSet: {
               comments: { commentText, commentAuthor: context.user.username },
@@ -79,28 +106,75 @@ const resolvers = {
           }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
-    removeThought: async (parent, { thoughtId }, context) => {
+    // addCharacter
+    addCharForm: async (
+      parent,
+      {
+        name,
+        level,
+        race,
+        charClass,
+        alignment,
+        experience,
+        strength,
+        dexterity,
+        constitution,
+        intelligence,
+        wisdom,
+        charisma
+      },
+      context,
+      error
+    ) => {
+      if (error) return error;
+      console.log("LINE 131 ", name, level, race);
       if (context.user) {
-        const thought = await Thought.findOneAndDelete({
-          _id: thoughtId,
-          thoughtAuthor: context.user.username,
+        const charForm = await CharForm.create({
+          createdBy: context.user.username,
+          name,
+          level,
+          race,
+          charClass,
+          alignment,
+          experience,
+          strength,
+          dexterity,
+          constitution,
+          intelligence,
+          wisdom,
+          charisma
+        });
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { charForms: charForm._id } }
+        );
+
+        return charForm;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    removeMeetup: async (parent, { meetupId }, context) => {
+      if (context.user) {
+        const meetup = await Meetup.findOneAndDelete({
+          _id: meetupId,
+          host: context.user.username,
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { thoughts: thought._id } }
+          { $pull: { meetups: meetup._id } }
         );
 
-        return thought;
+        return meetup;
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
-    removeComment: async (parent, { thoughtId, commentId }, context) => {
+    removeComment: async (parent, { meetupId, commentId }, context) => {
       if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
+        return Meetup.findOneAndUpdate(
+          { _id: meetupId },
           {
             $pull: {
               comments: {
@@ -112,7 +186,23 @@ const resolvers = {
           { new: true }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    removeCharForm: async (parent, { charFormId }, context) => {
+      if (context.user) {
+        const charForm = await CharForm.findOneAndDelete({
+          _id: charFormId,
+          createdBy: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { charForms: charForm._id } }
+        );
+
+        return charForm;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };

@@ -6,10 +6,29 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      thoughts {
+      meetups {
         _id
-        thoughtText
-        createdAt
+        dateTime
+        campaignName
+        campaignDescription
+        campaignDuration
+        campaignPartySize
+        meetupAddress
+        meetupCreatedAt
+      }
+      charForms {
+        _id
+        name
+        level
+        charClass
+        alignment
+        experience
+        strength
+        dexterity
+        constitution
+        intelligence
+        wisdom
+        charisma
       }
     }
   }
@@ -21,39 +40,74 @@ export const QUERY_CHARACTER = gql`
       _id
       name
       level
-      class
+      charClass
       alignment
       experience
-      strenght
+      strength
       dexterity
       constitution
       intelligence
       wisdom
       charisma
-      characterAuthor
-      createdAt
     }
   }
 `;
 
-export const QUERY_THOUGHTS = gql`
-  query getThoughts {
-    thoughts {
+// export const QUERY_THOUGHTS = gql`
+//   query getThoughts {
+//     thoughts {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//     }
+//   }
+// `;
+
+export const QUERY_MEETUPS = gql`
+  query getMeetups {
+    meetups {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      dateTime
+      campaignName
+      campaignDescription
+      campaignDuration
+      campaignPartySize
+      meetupAddress
+      meetupCreatedAt
+      host
     }
   }
 `;
 
-export const QUERY_SINGLE_THOUGHT = gql`
-  query getSingleThought($thoughtId: ID!) {
-    thought(thoughtId: $thoughtId) {
+// export const QUERY_SINGLE_THOUGHT = gql`
+//   query getSingleThought($thoughtId: ID!) {
+//     thought(thoughtId: $thoughtId) {
+//       _id
+//       thoughtText
+//       thoughtAuthor
+//       createdAt
+//       comments {
+//         _id
+//         commentText
+//         commentAuthor
+//         createdAt
+//       }
+//     }
+//   }
+// `;
+export const QUERY_SINGLE_MEETUP = gql`
+  query getSingleMeetup($meetupId: ID!) {
+    meetup(meetupId: $meetupId) {
       _id
-      thoughtText
-      thoughtAuthor
-      createdAt
+      dateTime
+      campaignName
+      campaignDescription
+      campaignDuration
+      campaignPartySize
+      meetupAddress
+      meetupCreatedAt
+      host
       comments {
         _id
         commentText
@@ -70,11 +124,16 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      meetups {
         _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+        dateTime
+        campaignName
+        campaignDescription
+        campaignDuration
+        campaignPartySize
+        meetupAddress
+        meetupCreatedAt
+        host
       }
     }
   }

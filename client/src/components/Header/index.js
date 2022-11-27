@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 
+
 const Header = () => {
   const logout = (event) => {
     event.preventDefault();
@@ -16,6 +17,7 @@ const Header = () => {
             <h1 className="m-0">airDnD</h1>
           </Link>
           <p className="m-0">DnD Time!.</p>
+
         </div>
         <div>
           {Auth.loggedIn() ? (
