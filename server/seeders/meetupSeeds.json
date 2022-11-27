@@ -6,7 +6,7 @@
     "campaignDescription" : "I was in the middle of baking, when all of a sudden a group of trolls comes in and eats my pies!",
     "campaignDuration" : "30 minutes",
     "campaignPartySize" : "2",
-    "meetupAddress" : "1 Home Way, San Diego, CA 92126"
+    "meetupAddress" : "8155 Mira Mesa Blvd, San Diego, CA 92126"
   },
   {
     "dateTime" : "11/30/2022 5:00 PM",
@@ -15,16 +15,16 @@
     "campaignDescription" : "One day I wake up, and I'm in a hospital... luckily for me, my friends are there to help me escape!",
     "campaignDuration" : "1 hour",
     "campaignPartySize" : "5",
-    "meetupAddress" : "2 Hospital Ave, 5th Floor, San Diego, CA 92121"
+    "meetupAddress" : "8990 Miramar Rd #150, San Diego, CA 92126"
   },
   {
     "dateTime" : "12/01/2022 1:00 PM",
     "host" : "jonattheworldcup",
-    "campaignName" : "Where's my vuvuzela",
+    "campaignName" : "Where's my Vuvuzela",
     "campaignDescription" : "The day before the World Cup begins and the ban on Vuvuzelas has been uplifted. Where do I go to get a new one?",
     "campaignDuration" : "5 days",
     "campaignPartySize" : "3",
-    "meetupAddress" : "3 FIFA Ave, Room 6294, San Diego, CA 92037"
+    "meetupAddress" : "9821 Carroll Canyon Rd A, San Diego, CA 92131"
   },
   {
     "dateTime" : "12/02/2022 2:00 PM",
@@ -33,7 +33,7 @@
     "campaignDescription" : "Unfortunately, Andy's bird is sick, and the only cure is a birdseed mix with specially made birdseed. Help Andy get that special seed!",
     "campaignDuration" : "2 days",
     "campaignPartySize" : "6",
-    "meetupAddress" : "10 Canaries Dr, San Diego, CA 92127"
+    "meetupAddress" : "5037 Shawline St, San Diego, CA 92111"
   },
   {
     "dateTime" : "12/03/2022 11:00 AM",
@@ -42,6 +42,33 @@
     "campaignDescription" : "In this campaign, the party must explore the hut of Baba Yaga. Baba Yaga seeks immortality and can control the night and day cycle of any world in which her hut appears. This incredibly powerful being lives in what appears to be a small hut sitting atop giant bird legs. However, the hut is much like Doctor Who's T.A.R.D.I.S. in that it is bigger on the inside.",
     "campaignDuration" : "3 days",
     "campaignPartySize" : "7",
-    "meetupAddress" : "Babayaga's House"
+    "meetupAddress" : "173 Fletcher Pkwy, El Cajon, CA 92020"
+  },
+  {
+    "dateTime" : "01/10/2023 9:00 AM",
+    "host" : "nickeats",
+    "campaignName" : "Tomb Of Horrors",
+    "campaignDescription" : "Sometimes, player-characters get so powerful that they feel they can challenge the gods themselves. For a DM, it can be hard to create an adventure that will challenge a party of adventurers like this. That is why Gary Goya created this adventure module way back in 1978.",
+    "campaignDuration" : "8 hours",
+    "campaignPartySize" : "4",
+    "meetupAddress" : "9995 Carmel Mountain Rd, San Diego, CA 92129"
+  }, 
+  {
+    "dateTime" : "02/22/23",
+    "host" : "kevinluvs2dance",
+    "campaignName" : "Lost Mine Of Phandelver",
+    "campaignDescription" : "In ancient times there was a mine close to Neverwinter (in the Forgotten Realms). This mine was run by a cooperative formed by dwarves and gnomes, with the help of human wizards. At the heart of this mine was the Forge of Spells - a powerful relic that harnesses the mine's ambient energies for crafting magical items.",
+    "campaignDuration" : "4 hours",
+    "campaignPartySize" : "6",
+    "meetupAddress" : "9839 Mira Mesa Blvd, San Diego, CA 92131"
+  },
+  {
+    "dateTime" : "02/22/23",
+    "host" : "jonattheworldcup",
+    "campaignName" : "Tyranny Of Dragons",
+    "campaignDescription" : "For a group that is looking for a campaign of epic proportions, Tyranny of Dragons might be the right. This quest pits the party against the Cult of the Dragon. The Cult of the Dragon is best known for creating dracoliches, but in this campaign, they have a new goal - to bring Tiamat to the Prime Material Plane.",
+    "campaignDuration" : "1 month",
+    "campaignPartySize" : "5",
+    "meetupAddress" : "510 N Escondido Blvd, Escondido, CA 92025"
   }
 ]

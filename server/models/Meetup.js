@@ -4,6 +4,7 @@ const meetupSchema = new Schema({
   dateTime: {
     type: Date,
     required: true,
+    get: (timestamp) => dateFormat(timestamp),
   },
   host: {
     type: String,

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const meetuptList = ({
-  // thoughts,
+
   meetups,
   title,
   showTitle = true,
@@ -19,29 +19,37 @@ const meetuptList = ({
           <div key={meetup._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
               {showUsername ? (
-                <Link className="text-light" to={`/profiles/${meetup.host}`}>
-                  {meetup.host} <br />
+                <Link className="text-light" to={`/meetups/${meetup._id}`}>
+                  {meetup.campaignName} <br />
                   <span style={{ fontSize: "1rem" }}>
-                    meetup created on {meetup.meetupCreatedAt}
+                    created on {meetup.meetupCreatedAt} by <span>{meetup.host}</span>
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: "1rem" }}>
-                    You had this meetup created on {meetup.meetupCreatedAt}
+                    You summoned a crew on {meetup.meetupCreatedAt}
                   </span>
                 </>
               )}
             </h4>
             <div className="card-body bg-light p-2">
               <p>{meetup.campaignDescription}</p>
+              <div>
+                <p>{meetup.dateTime} ({meetup.campaignDuration}) </p>
+                <p>{meetup.meetupAddress} <span>Party Size: {meetup.campaignPartySize}</span></p>
+                {/* add # of comments from array */}
+                <Link >{meetup.comments} comments</Link>
+              </div>
             </div>
-            <Link
+            {/* hosted by */}
+            
+            {/* <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/meetups/${meetup._id}`}
             >
               Join the discussion on this meetup.
-            </Link>
+            </Link> */}
           </div>
         ))}
     </div>

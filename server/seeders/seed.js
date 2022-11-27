@@ -1,12 +1,13 @@
 const db = require('../config/connection');
-const { User, Meetup, Character } = require('../models');
+const { User, Meetup, Character, CharForm } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const meetupSeeds = require('./meetupSeeds.json');
-// const characterSeeds = require('./characterSeeds.json');
+const charFormSeeds = require('./charFormSeeds.json');
 
 db.once('open', async () => {
   try {
     await Meetup.deleteMany({});
+    await CharForm.deleteMany({});
     await User.deleteMany({});
     // does this seed need to occur separately from the rest?
     // await Character.deleteMany({});
@@ -20,6 +21,17 @@ db.once('open', async () => {
         {
           $addToSet: {
             meetups: _id,
+          },
+        }
+      );
+    }
+    for (let i = 0; i < charFormSeeds.length; i++) {
+      const { _id, host } = await CharForm.create(charFormSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { username: host },
+        {
+          $addToSet: {
+            charforms: _id,
           },
         }
       );

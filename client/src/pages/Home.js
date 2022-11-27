@@ -23,7 +23,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <MeetuptList meetups={meetups} title="Some Feed for Meetup(s)..." />
+            <MeetuptList meetups={meetups} title="Campaign Bulletin Board" />
           )}
         </div>
       </div>
