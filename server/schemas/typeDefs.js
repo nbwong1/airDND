@@ -45,7 +45,6 @@ const typeDefs = gql`
     intelligence: Int
     wisdom: Int
     charisma: Int
-    # add user to CharForm
     users: [User]
   }
 
@@ -80,8 +79,8 @@ const typeDefs = gql`
       name: String!,
       level: Int!,
       race: String!,
-      charClass: String!,
-      alignment: String!,
+      charClass: String,
+      alignment: String,
       experience: Int,
       strength: Int,
       dexterity: Int,
