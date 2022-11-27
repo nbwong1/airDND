@@ -29,7 +29,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id }).populate("meetups");
+        return User.findOne({ _id: context.user._id }).populate("meetups").populate("charForms");
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -116,7 +116,6 @@ const resolvers = {
         level,
         race,
         charClass,
-        background,
         alignment,
         experience,
         strength,
@@ -124,10 +123,13 @@ const resolvers = {
         constitution,
         intelligence,
         wisdom,
-        charisma,
+        charisma
       },
-      context
+      context,
+      error
     ) => {
+      if (error) return error;
+      console.log("LINE 131 ", name, level, race);
       if (context.user) {
         const charForm = await CharForm.create({
           createdBy: context.user.username,
@@ -135,7 +137,6 @@ const resolvers = {
           level,
           race,
           charClass,
-          background,
           alignment,
           experience,
           strength,
@@ -143,9 +144,8 @@ const resolvers = {
           constitution,
           intelligence,
           wisdom,
-          charisma,
+          charisma
         });
-
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { charForms: charForm._id } }

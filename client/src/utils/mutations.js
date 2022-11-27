@@ -25,45 +25,45 @@ export const ADD_USER = gql`
 `;
 export const ADD_CHARACTER = gql`
   mutation addCharForm(
-    $name: String!
-    $level: Int!
-    $class: String!
-    $alignment: String!
-    $experience: Int!
-    $strenght: Int!
-    $dexterity: Int!
-    $constitution: Int!
-    $intelligence: Int!
-    $wisdom: Int!
+    $name: String!,
+    $level: Int!,
+    $race: String!,
+    $charClass: String!,
+    $alignment: String!,
+    $experience: Int!,
+    $strength: Int!,
+    $dexterity: Int!,
+    $constitution: Int!,
+    $intelligence: Int!,
+    $wisdom: Int!,
     $charisma: Int!
   ) {
     addCharForm(
-      name: $name
-      level: $level
-      class: $class
-      alignment: $alignment
-      experience: $experience
-      strenght: $strenght
-      dexterity: $dexterity
-      constitution: $constitution
-      intelligence: $intelligence
-      wisdom: $wisdom
-      charisma: $charisma
+      name: $name,
+      level: $level,
+      race: $race,
+      charClass: $charClass,
+      alignment: $alignment,
+      experience: $experience,
+      strength: $strength,
+      dexterity: $dexterity,
+      constitution: $constitution,
+      intelligence: $intelligence,
+      wisdom: $wisdom,
+      charisma: $charisma,
     ) {
       _id
       name
       level
-      class
+      charClass
       alignment
       experience
-      strenght
+      strength
       dexterity
       constitution
       intelligence
       wisdom
       charisma
-      characterAuthor
-      createdAt
     }
   }
 `;
@@ -85,19 +85,19 @@ export const ADD_CHARACTER = gql`
 
 export const ADD_MEETUP = gql`
   mutation addMeetup(
-    $dateTime: String!
-    $campaignName: String!
-    $campaignDescription: String!
-    $campaignDuration: String!
-    $campaignPartySize: String!
+    $dateTime: String!,
+    $campaignName: String!,
+    $campaignDescription: String!,
+    $campaignDuration: String!,
+    $campaignPartySize: String!,
     $meetupAddress: String!
   ) {
     addMeetup(
-      dateTime: $dateTime
-      campaignName: $campaignName
-      campaignDescription: $campaignDescription
-      campaignDuration: $campaignDuration
-      campaignPartySize: $campaignPartySize
+      dateTime: $dateTime,
+      campaignName: $campaignName,
+      campaignDescription: $campaignDescription,
+      campaignDuration: $campaignDuration,
+      campaignPartySize: $campaignPartySize,
       meetupAddress: $meetupAddress
     ) {
       _id
