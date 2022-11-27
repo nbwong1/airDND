@@ -109,27 +109,9 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // addCharacter
-    addCharForm: async (
-      parent,
-      {
-        name,
-        level,
-        race,
-        charClass,
-        alignment,
-        experience,
-        strength,
-        dexterity,
-        constitution,
-        intelligence,
-        wisdom,
-        charisma
-      },
-      context,
-      error
+    addCharForm: async (parent, { name, level, race, charClass, alignment, experience, strength, dexterity, constitution, intelligence, wisdom, charisma },
+      context
     ) => {
-      if (error) return error;
-      console.log("LINE 131 ", name, level, race);
       if (context.user) {
         const charForm = await CharForm.create({
           createdBy: context.user.username,
@@ -144,8 +126,9 @@ const resolvers = {
           constitution,
           intelligence,
           wisdom,
-          charisma
+          charisma,
         });
+
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { charForms: charForm._id } }

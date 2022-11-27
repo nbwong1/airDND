@@ -60,7 +60,7 @@ const CharForm = () => {
     event.preventDefault();
 
     try {
-      const { data, err } = await addCharForm({
+      const { charFormData, err } = await addCharForm({
         variables: {
           ...charFormData,
         },
