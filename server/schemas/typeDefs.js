@@ -37,7 +37,6 @@ const typeDefs = gql`
     level: Int
     race: String
     charClass: String
-    background: String
     alignment: String
     experience: Int
     strength: Int
@@ -54,7 +53,7 @@ const typeDefs = gql`
     token: ID!
     user: User
   }
-  
+
   type Query {
     users: [User]
     user(username: String!): User
@@ -68,9 +67,29 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addMeetup(dateTime: String!, campaignName: String!, campaignDescription: String!, campaignDuration: String!, campaignPartySize: String!, meetupAddress: String!): Meetup
+    addMeetup(
+      dateTime: String!,
+      campaignName: String!,
+      campaignDescription: String!,
+      campaignDuration: String!,
+      campaignPartySize: String!,
+      meetupAddress: String!
+    ): Meetup
     addComment(meetupId: ID!, commentText: String!): Meetup
-    addCharForm(name: String!, level: Int!, race: String!, charClass: String, alignment: String, experience: Int, strength: Int, dexterity: Int, constitution: Int, intelligence: Int, wisdom: Int, charisma: Int) : CharForm
+    addCharForm(
+      name: String!,
+      level: Int!,
+      race: String!,
+      charClass: String!,
+      alignment: String!,
+      experience: Int,
+      strength: Int,
+      dexterity: Int,
+      constitution: Int,
+      intelligence: Int,
+      wisdom: Int,
+      charisma: Int
+    ): CharForm
     removeMeetup(meetupId: ID!): Meetup
     removeComment(meetupId: ID!, commentId: ID!): Meetup
     removeCharForm(charFormId: ID!): CharForm

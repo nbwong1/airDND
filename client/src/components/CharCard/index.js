@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./index.css";
-import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
+// import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
 
-const CharCard = () => {
+const CharCard = (props) => {
   // console.log(charForms);
   return (
     <div>
@@ -10,7 +10,7 @@ const CharCard = () => {
         <div className=" textBox">
           <div>
             <h4 className="classT">class</h4>
-            <p>name:</p>
+            <p>name: {props.username}</p>
             <p>lvl.</p>
             <p>race</p>
             <p>alignment</p>

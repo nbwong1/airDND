@@ -17,6 +17,8 @@ const Profile = () => {
   });
 
   const user = data?.me || data?.user || {};
+
+  console.log(user);
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
@@ -42,9 +44,7 @@ const Profile = () => {
         <div className="column">
           <CharForm />
 
-          <CharCard
-          //  charForm={user.charForms}
-          />
+          <CharCard username={user.username} />
           <br />
         </div>
         {/* CharForm */}

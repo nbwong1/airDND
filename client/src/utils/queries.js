@@ -16,6 +16,20 @@ export const QUERY_USER = gql`
         meetupAddress
         meetupCreatedAt
       }
+      charForms {
+        _id
+        name
+        level
+        charClass
+        alignment
+        experience
+        strength
+        dexterity
+        constitution
+        intelligence
+        wisdom
+        charisma
+      }
     }
   }
 `;
@@ -26,17 +40,15 @@ export const QUERY_CHARACTER = gql`
       _id
       name
       level
-      class
+      charClass
       alignment
       experience
-      strenght
+      strength
       dexterity
       constitution
       intelligence
       wisdom
       charisma
-      characterAuthor
-      createdAt
     }
   }
 `;
