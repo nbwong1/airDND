@@ -26,9 +26,9 @@ const SingleMeetup = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {meetup.host} <br />
+        {meetup.campaignName} <br />
         <span style={{ fontSize: "1rem" }}>
-          had this thought on {meetup.meetupCreatedAt}
+          {meetup.host} posted this quest {meetup.meetupCreatedAt}
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -41,7 +41,10 @@ const SingleMeetup = () => {
             lineHeight: "1.5",
           }}
         >
-          {meetup.campaignDescription}
+          <p>{meetup.campaignDescription}</p>
+          <p>{meetup.dateTime} ({meetup.campaignDuration})</p>
+          <p>{meetup.meetupAddress} <span>Party Size: {meetup.campaignPartySize}</span></p>
+          
         </blockquote>
       </div>
 

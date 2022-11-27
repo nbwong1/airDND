@@ -7,8 +7,8 @@ import { QUERY_MEETUPS, QUERY_ME } from "../../utils/queries";
 
 import Auth from "../../utils/auth";
 
+// creating the meetup form
 const MeetupForm = () => {
-  // const [thoughtText, setThoughtText] = useState("");
   const [ formState , setFormState ] = useState({
     dateTime: "",
     campaignName: "",
@@ -18,7 +18,7 @@ const MeetupForm = () => {
     meetupAddress: "",
     meetupCreatedAt: "",
 });
-
+// character count 
   const [characterCount, setCharacterCount] = useState(0);
 
   const [addMeetup, { error }] = useMutation(ADD_MEETUP, {
@@ -57,7 +57,7 @@ const MeetupForm = () => {
     }
     console.log(formState);
   };
-
+// submission of form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -82,18 +82,10 @@ const MeetupForm = () => {
     }
   };
 
-  // const handleChange = (event) => {
-    // must be deleted
-  //   const { name, value } = event.target;
-
-  //   if (name === "meetupData.campaignDescription" && value.length <= 500) {
-  //     setThoughtText(value);
-  //     setCharacterCount(value.length);
-  //   }
-  // must be deleted
   return (
     <div>
-      <h3>What's on DnD age?</h3>
+      <h3>Add your campaign</h3>
+      <p>Looking to slay dragons or stop the Necromancer? Add to the bulletin board and seek out other heroes yearning for adventure!</p>
 
       {Auth.loggedIn() ? (
         <>
@@ -109,20 +101,24 @@ const MeetupForm = () => {
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
+            {/* what is the date/time */}
             <div className="col-12 col-lg-9">
+            <h6>Date/Time of Event:</h6>
               <textarea
                 name="dateTime"
-                placeholder="When are the festivities?"
+                placeholder="MM/DD/YYYY HH:mm AM"
                 value={formState.dateTime}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
+            {/* campaignName */}
             <div className="col-12 col-lg-9">
+              <h6>Campaign Name:</h6>
               <textarea
               name="campaignName"
-              placeholder="Campaign Name"
+              placeholder="i.e. Tales From The Yawning Portal."
               value={formState.campaignName}
               className="form-input w-100"
               style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -131,9 +127,10 @@ const MeetupForm = () => {
             </div>
             {/* campaignDescription div */}
             <div className="col-12 col-lg-9">
+              <h6>Description:</h6>
               <textarea
                 name="campaignDescription"
-                placeholder="Here's a meetup..."
+                placeholder="Brief description of the campaign."
                 value={formState.campaignDescription}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -142,9 +139,10 @@ const MeetupForm = () => {
             </div>
             {/* campaignDuration */}
             <div className="col-12 col-lg-9">
+              <h6>How long is the campaign?</h6>
               <textarea
                 name="campaignDuration"
-                placeholder="How long is your quest?"
+                placeholder="Minutes, Hours, Days, Weeks?"
                 value={formState.campaignDuration}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -153,9 +151,10 @@ const MeetupForm = () => {
             </div>
             {/* campaignPartySize */}
             <div className="col-12 col-lg-9">
+              <h6>Preferred Party Size:</h6>
               <textarea
                 name="campaignPartySize"
-                placeholder="What size party is required?"
+                placeholder="How many in your party?"
                 value={formState.campaignPartySize}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -164,16 +163,17 @@ const MeetupForm = () => {
             </div>
             {/* meetupAddress */}
             <div className="col-12 col-lg-9">
+              <h6>Rendezvous Address</h6>
               <textarea
                 name="meetupAddress"
-                placeholder="Where does the party meet?"
+                placeholder="Address"
                 value={formState.meetupAddress}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
               ></textarea>
             </div>
-
+            <br></br>
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
                 Create Meetup

@@ -95,7 +95,7 @@ const CharForm = () => {
       {Auth.loggedIn() ? (
         <form onSubmit={handleFormSubmit}>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput">Name:</label>
+            <label htmlFor="formGroupExampleInput">Name: </label>
             <input
               type="text"
               // value={charFormData.name}
@@ -107,7 +107,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">LEVEL:</label>
+            <label htmlFor="formGroupExampleInput2">Level: </label>
             <input
               type="number"
               //  value={charFormData.level}
@@ -119,7 +119,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput">RACE:</label>
+            <label htmlFor="formGroupExampleInput">Race: </label>
             <input
               type="text"
               //  value={charFormData.race}
@@ -131,19 +131,19 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput">class:</label>
+            <label htmlFor="formGroupExampleInput">Class: </label>
             <input
               type="list"
               //  value={charFormData.charClass}
               className="form-control"
               id="className"
-              placeholder="class"
+              placeholder="Class"
               name="charClass"
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput">ALIGNMENT:</label>
+            <label htmlFor="formGroupExampleInput">Alignment: </label>
             <input
               type="text"
               //  value={charFormData.alignment}
@@ -155,7 +155,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">EXP:</label>
+            <label htmlFor="formGroupExampleInput2">XP: </label>
             <input
               type="number"
               //  value={charFormData.experience}
@@ -168,7 +168,7 @@ const CharForm = () => {
           </div>
           {/* main stats */}
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Str:</label>
+            <label htmlFor="formGroupExampleInput2">Strength: </label>
             <input
               type="number"
               //  value={charFormData.strength}
@@ -180,7 +180,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Dex:</label>
+            <label htmlFor="formGroupExampleInput2">Dexterity: </label>
             <input
               type="number"
               //  value={charFormData.dexterity}
@@ -192,7 +192,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Con:</label>
+            <label htmlFor="formGroupExampleInput2">Constitution: </label>
             <input
               type="number"
               //  value={charFormData.constitution}
@@ -204,20 +204,19 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Int:</label>
+            <label htmlFor="formGroupExampleInput2">Intelligence: </label>
             <input
               type="number"
               //  value={charFormData.intelligence}
               className="form-control"
               id="formGroupExampleInput2"
               placeholder="Intelligence"
-              
               name="intelligence"
               onChange={handleInputChange}
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Wis:</label>
+            <label htmlFor="formGroupExampleInput2">Wisdom: </label>
             <input
               // type="number"
               //  value={charFormData.wisdom}
@@ -229,7 +228,7 @@ const CharForm = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="formGroupExampleInput2">Char:</label>
+            <label htmlFor="formGroupExampleInput2">Charisma: </label>
             <input
               type="number"
                placeholder="Charisma"
@@ -245,7 +244,7 @@ const CharForm = () => {
             style={{ cursor: "pointer" }}
             type="submit"
           >
-            Create
+            Create Character
           </button>
         </form>
       ) : (
