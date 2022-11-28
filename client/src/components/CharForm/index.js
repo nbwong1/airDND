@@ -58,19 +58,20 @@ const CharForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      const { charFormData, err } = await addCharForm({
+        addCharForm({
         variables: {
           ...charFormData,
         },
+        
       });
-      if (err) {
-        console.error(err);
-      }
-      console.log(data);
-      console.log(charFormData);
-      setcharFormData({
+      // console.log(data);
+      console.log( "line 73" + charFormData);
+      
+    } catch (err) {
+      console.error(err);
+    }
+    setcharFormData({
         name: "",
         level: 0,
         race: "",
@@ -85,9 +86,6 @@ const CharForm = () => {
         wisdom: 0,
         charisma: 0,
       });
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (

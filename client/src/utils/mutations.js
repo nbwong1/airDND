@@ -50,7 +50,7 @@ export const ADD_CHARACTER = gql`
       constitution: $constitution,
       intelligence: $intelligence,
       wisdom: $wisdom,
-      charisma: $charisma,
+      charisma: $charisma
     ) {
       _id
       name
