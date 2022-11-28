@@ -2,7 +2,7 @@ import React from "react";
 import "./index.css";
 // import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
 
-const CharCard = (props) => {
+const CharCard = ({name, level}) => {
   // console.log(charForms);
   return (
     <div>
@@ -10,8 +10,8 @@ const CharCard = (props) => {
         <div className=" textBox">
           <div>
             <h4 className="classT">class</h4>
-            <p>name: {props.username}</p>
-            <p>lvl.</p>
+            <p>name: {name}</p>
+            <p>lvl. {level}</p>
             <p>race</p>
             <p>alignment</p>
             <p>experience</p>

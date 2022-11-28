@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { json, Navigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import CharForm from "../components/CharForm";
 import CharCard from "../components/CharCard";
@@ -36,7 +36,8 @@ const Profile = () => {
       </h4>
     );
   }
-
+ var testData = JSON.stringify(user.charForms);
+ console.log(testData);
   return (
     <div>
       <div className="flex-row justify-center mb-3">
@@ -44,7 +45,10 @@ const Profile = () => {
         <div className="column">
           <CharForm />
 
-          <CharCard username={user.username} />
+          <CharCard 
+          name={user.charForms[0].name}
+          level={user.charForms[0].level}
+          />
           <br />
         </div>
         {/* CharForm */}
