@@ -6,8 +6,8 @@
     background-size:cover;
     background-repeat: no-repeat;
     background-position:bottom;
-    height:200px;
-    position:fixed;
+    background-color: #fff;
+    height:199px;
     bottom:0;
   }
   footer div h4{
