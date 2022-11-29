@@ -3,34 +3,21 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 
 import { ADD_CHARACTER } from "../../utils/mutations";
-import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
+// import { QUERY_CHARACTER, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
-// {
-//     update(cache, data, addCharForm) {
-//       try {
-//         const { charForms } = cache.readQuery({ query: QUERY_CHARACTER });
+// import {useForm} from "react-hook-form"
 
-//         cache.writeQuery({
-//           query: QUERY_CHARACTER,
-//           data: { charForms: [addCharForm, ...charForms] },
-//         });
-//       } catch (e) {
-//         console.error(e);
-//       }
-
-//       // update me object's cache
-//       try {
-//         const { me } = cache.readQuery({ query: QUERY_ME });
-//         cache.writeQuery({
-//           query: QUERY_ME,
-//           data: { me: { ...me, charForms: [...me.charForms, addCharForm] } },
-//         });
-//       } catch (e) {
-//         console.error(e);
-//       }
-//     },
-//   }
 const CharForm = () => {
+
+  // const {
+  //   register,
+  //   watch,
+  //   reset,
+  //   handleSubmit,
+  //   formState: { errors,  isSubmitting, isValid } 
+  // } = useForm();
+  // const onSubmit = data => console.log(data);
+
   const [charFormData, setcharFormData] = useState({
     name: "",
     level: 0,
@@ -57,7 +44,8 @@ const CharForm = () => {
   };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
+    // handleSubmit(onSubmit);
     try {
         addCharForm({
         variables: {
@@ -86,6 +74,7 @@ const CharForm = () => {
         wisdom: 0,
         charisma: 0,
       });
+
   };
 
   return (
@@ -120,6 +109,13 @@ const CharForm = () => {
             <label htmlFor="formGroupExampleInput">Race: </label>
             <input
               type="text"
+              // style={
+              //    {...register('race', {
+              //   required: true,
+              //   pattern: {value: /[A-Za-z]/},
+              // })}
+              // }
+              
               //  value={charFormData.race}
               className="form-control"
               id="formGroupExampleInput"
@@ -127,11 +123,13 @@ const CharForm = () => {
               name="race"
               onChange={handleInputChange}
             />
+             {/* {errors.race?.type === 'required' && (<p>must be letters only</p>)} */}
           </div>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Class: </label>
             <input
               type="list"
+              list="classes"
               //  value={charFormData.charClass}
               className="form-control"
               id="className"
@@ -139,6 +137,21 @@ const CharForm = () => {
               name="charClass"
               onChange={handleInputChange}
             />
+            <datalist id="classes">
+              <option value="barbarian" />
+              <option value="bard" />
+              <option value="cleric" />
+              <option value="druid" />
+              <option value="fighter" />
+              <option value="monk" />   
+              <option value="paladin" />   
+              <option value="ranger" />   
+              <option value="rogue" />  
+              <option value="sorcerer" />  
+              <option value="warlock" />  
+              <option value="wizard" />  
+              <option value="artificer" />  
+          </datalist>
           </div>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Alignment: </label>
@@ -238,6 +251,7 @@ const CharForm = () => {
             />
           </div>
           <button
+          //  disabled={!isValid} 
             className="btn btn-block btn-primary"
             style={{ cursor: "pointer" }}
             type="submit"
