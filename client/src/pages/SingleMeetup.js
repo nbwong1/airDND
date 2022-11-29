@@ -1,8 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useReactiveVar } from "@apollo/client";
 
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
@@ -24,6 +24,7 @@ const SingleMeetup = () => {
     return <div>Loading...</div>;
   }
   return (
+
     <div className="my-5">
       <div style={{
         background: "rgb(149,0,0,100)",
@@ -33,7 +34,10 @@ const SingleMeetup = () => {
         boxShadow: "10px 10px 10px rgba(30,30,30,.5)"
       }}>
         <h3 className="card-header  py-5 m-0" style={{ fontSize: '25px', color: "white", }}>
-          {meetup.campaignName}<span>{meetup.host} posted this quest {meetup.meetupCreatedAt}</span><br />
+          <span>
+            {/* added profile link */}
+            <Link className="text-light" to={`/profiles/${meetup.host}`}>{meetup.host}</Link> posted this quest {meetup.meetupCreatedAt}
+           </span>
         </h3>
       </div>
       <div className="main py-1" style={{
@@ -44,6 +48,8 @@ const SingleMeetup = () => {
 
 
       }}>
+
+
         <blockquote
           className="p-4"
           style={{
