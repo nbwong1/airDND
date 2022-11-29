@@ -17,6 +17,7 @@ const CharForm = () => {
   //   formState: { errors,  isSubmitting, isValid } 
   // } = useForm();
   // const onSubmit = data => console.log(data);
+  // const [inputVal, setInputVal] = useState('')
 
   const [charFormData, setcharFormData] = useState({
     name: "",
@@ -38,10 +39,20 @@ const CharForm = () => {
   if (error) throw error;
 
   const handleInputChange = (event) => {
+
     const { name, value } = event.target;
     setcharFormData({ ...charFormData, [name]: parseInt(value) || value });
     console.log(charFormData);
   };
+
+  function empty() {
+    var x;
+    x = document.getElementById("roll-input").value;
+    if (x == "") {
+      alert("Enter a Valid Roll Number");
+      return false;
+    };
+  }
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -59,21 +70,21 @@ const CharForm = () => {
     } catch (err) {
       console.error(err);
     }
-    setcharFormData({
-      name: "",
-      level: 0,
-      race: "",
-      charClass: "",
-      alignment: "",
-      experience: 0,
-      // stats
-      strength: 0,
-      dexterity: 0,
-      constitution: 0,
-      intelligence: 0,
-      wisdom: 0,
-      charisma: 0,
-    });
+    // setcharFormData({
+    //   name: "",
+    //   level: 0,
+    //   race: "",
+    //   charClass: "",
+    //   alignment: "",
+    //   experience: 0,
+    //   // stats
+    //   strength: 0,
+    //   dexterity: 0,
+    //   constitution: 0,
+    //   intelligence: 0,
+    //   wisdom: 0,
+    //   charisma: 0,
+    // });
 
   };
 
@@ -87,9 +98,10 @@ const CharForm = () => {
               type="text"
               // value={charFormData.name}
               className="form-control"
-              id="formGroupExampleInput"
+              id="text"
               placeholder="Character Name"
               name="name"
+
               onChange={handleInputChange}
             />
           </div>
@@ -99,7 +111,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.level}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Level"
               name="level"
               onChange={handleInputChange}
@@ -118,7 +130,7 @@ const CharForm = () => {
 
               //  value={charFormData.race}
               className="form-control"
-              id="formGroupExampleInput"
+              id="text"
               placeholder="Race"
               name="race"
               onChange={handleInputChange}
@@ -132,12 +144,12 @@ const CharForm = () => {
               list="classes"
               //  value={charFormData.charClass}
               className="form-control"
-              id="className"
+              id="text"
               placeholder="Class"
               name="charClass"
               onChange={handleInputChange}
             />
-            <datalist id="classes">
+            <datalist id="text">
               <option value="barbarian" />
               <option value="bard" />
               <option value="cleric" />
@@ -159,7 +171,7 @@ const CharForm = () => {
               type="text"
               //  value={charFormData.alignment}
               className="form-control"
-              id="formGroupExampleInput"
+              id="text"
               placeholder="Alignment"
               name="alignment"
               onChange={handleInputChange}
@@ -171,7 +183,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.experience}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Experience"
               name="experience"
               onChange={handleInputChange}
@@ -184,7 +196,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.strength}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Strength"
               name="strength"
               onChange={handleInputChange}
@@ -196,7 +208,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.dexterity}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Dexterity"
               name="dexterity"
               onChange={handleInputChange}
@@ -208,7 +220,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.constitution}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Constitution"
               name="constitution"
               onChange={handleInputChange}
@@ -220,7 +232,7 @@ const CharForm = () => {
               type="number"
               //  value={charFormData.intelligence}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Intelligence"
               name="intelligence"
               onChange={handleInputChange}
@@ -232,7 +244,7 @@ const CharForm = () => {
               // type="number"
               //  value={charFormData.wisdom}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               placeholder="Wisdom"
               name="wisdom"
               onChange={handleInputChange}
@@ -245,7 +257,7 @@ const CharForm = () => {
               placeholder="Charisma"
               //  value={charFormData.charisma}
               className="form-control"
-              id="formGroupExampleInput2"
+              id="number"
               name="charisma"
               onChange={handleInputChange}
             />
