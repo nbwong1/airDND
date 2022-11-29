@@ -44,7 +44,7 @@ const CharForm = () => {
   };
 
   const handleFormSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // handleSubmit(onSubmit);
     try {
       addCharForm({
