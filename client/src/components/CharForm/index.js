@@ -44,7 +44,7 @@ const CharForm = () => {
   };
 
  const handleFormSubmit = async (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     // handleSubmit(onSubmit);
     try {
         addCharForm({
@@ -250,6 +250,7 @@ const CharForm = () => {
               onChange={handleInputChange}
             />
           </div>
+            
           <button
           //  disabled={!isValid} 
             className="btn btn-block btn-primary"
@@ -258,6 +259,7 @@ const CharForm = () => {
           >
             Create Character
           </button>
+      
         </form>
       ) : (
         <p>
