@@ -43,37 +43,37 @@ const CharForm = () => {
     console.log(charFormData);
   };
 
- const handleFormSubmit = async (event) => {
-    event.preventDefault();
+  const handleFormSubmit = async (event) => {
+    // event.preventDefault();
     // handleSubmit(onSubmit);
     try {
-        addCharForm({
+      addCharForm({
         variables: {
           ...charFormData,
         },
-        
+
       });
       // console.log(data);
-      console.log( "line 73" + charFormData);
-      
+      console.log("line 73" + charFormData);
+
     } catch (err) {
       console.error(err);
     }
     setcharFormData({
-        name: "",
-        level: 0,
-        race: "",
-        charClass: "",
-        alignment: "",
-        experience: 0,
-        // stats
-        strength: 0,
-        dexterity: 0,
-        constitution: 0,
-        intelligence: 0,
-        wisdom: 0,
-        charisma: 0,
-      });
+      name: "",
+      level: 0,
+      race: "",
+      charClass: "",
+      alignment: "",
+      experience: 0,
+      // stats
+      strength: 0,
+      dexterity: 0,
+      constitution: 0,
+      intelligence: 0,
+      wisdom: 0,
+      charisma: 0,
+    });
 
   };
 
@@ -115,7 +115,7 @@ const CharForm = () => {
               //   pattern: {value: /[A-Za-z]/},
               // })}
               // }
-              
+
               //  value={charFormData.race}
               className="form-control"
               id="formGroupExampleInput"
@@ -123,7 +123,7 @@ const CharForm = () => {
               name="race"
               onChange={handleInputChange}
             />
-             {/* {errors.race?.type === 'required' && (<p>must be letters only</p>)} */}
+            {/* {errors.race?.type === 'required' && (<p>must be letters only</p>)} */}
           </div>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Class: </label>
@@ -143,15 +143,15 @@ const CharForm = () => {
               <option value="cleric" />
               <option value="druid" />
               <option value="fighter" />
-              <option value="monk" />   
-              <option value="paladin" />   
-              <option value="ranger" />   
-              <option value="rogue" />  
-              <option value="sorcerer" />  
-              <option value="warlock" />  
-              <option value="wizard" />  
-              <option value="artificer" />  
-          </datalist>
+              <option value="monk" />
+              <option value="paladin" />
+              <option value="ranger" />
+              <option value="rogue" />
+              <option value="sorcerer" />
+              <option value="warlock" />
+              <option value="wizard" />
+              <option value="artificer" />
+            </datalist>
           </div>
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Alignment: </label>
@@ -242,7 +242,7 @@ const CharForm = () => {
             <label htmlFor="formGroupExampleInput2">Charisma: </label>
             <input
               type="number"
-               placeholder="Charisma"
+              placeholder="Charisma"
               //  value={charFormData.charisma}
               className="form-control"
               id="formGroupExampleInput2"
@@ -250,16 +250,16 @@ const CharForm = () => {
               onChange={handleInputChange}
             />
           </div>
-            
+
           <button
-          //  disabled={!isValid} 
+            //  disabled={!isValid} 
             className="btn btn-block btn-primary"
             style={{ cursor: "pointer" }}
             type="submit"
           >
             Create Character
           </button>
-      
+
         </form>
       ) : (
         <p>
