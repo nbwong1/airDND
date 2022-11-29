@@ -28,7 +28,7 @@ const userSchema = new Schema({
   charForms: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'CharForm'
+      ref: 'CharForm',
     }
   ]
 });

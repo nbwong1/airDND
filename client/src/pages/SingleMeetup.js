@@ -1,8 +1,8 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
-import { useQuery } from "@apollo/client";
+import { useQuery, useReactiveVar } from "@apollo/client";
 
 import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
@@ -28,7 +28,8 @@ const SingleMeetup = () => {
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {meetup.campaignName} <br />
         <span style={{ fontSize: "1rem" }}>
-          {meetup.host} posted this quest {meetup.meetupCreatedAt}
+          {/* added profile link */}
+          <Link className="text-light" to={`/profiles/${meetup.host}`}>{meetup.host}</Link> posted this quest {meetup.meetupCreatedAt}
         </span>
       </h3>
       <div className="bg-light py-4">

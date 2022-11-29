@@ -60,7 +60,7 @@ const CharForm = () => {
     event.preventDefault();
 
     try {
-      const { charFormData, err } = await addCharForm({
+      const { data, err } = await addCharForm({
         variables: {
           ...charFormData,
         },
@@ -68,7 +68,7 @@ const CharForm = () => {
       if (err) {
         console.error(err);
       }
-      console.log(data);
+      // console.log(data);
       console.log(charFormData);
       setcharFormData({
         name: "",

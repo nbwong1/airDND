@@ -8,9 +8,7 @@ const resolvers = {
       return User.find().populate("meetups").populate("charForms");
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username })
-        .populate("meetups")
-        .populate("charForms");
+      return User.findOne({ username }).populate("meetups").populate("charForms");
     },
     meetups: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -23,7 +21,6 @@ const resolvers = {
       const params = username ? { username } : {};
       return CharForm.find(params).sort({ createdAt: -1 });
     },
-
     charForm: async (parent, { charFormId }) => {
       return CharForm.findOne({ _id: charFormId });
     },
@@ -109,7 +106,22 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     // addCharacter
-    addCharForm: async (parent, { name, level, race, charClass, alignment, experience, strength, dexterity, constitution, intelligence, wisdom, charisma },
+    addCharForm: async (
+      parent, 
+      { 
+        name, 
+        level, 
+        race, 
+        charClass, 
+        alignment, 
+        experience, 
+        strength, 
+        dexterity, 
+        constitution, 
+        intelligence, 
+        wisdom, 
+        charisma,
+       },
       context
     ) => {
       if (context.user) {

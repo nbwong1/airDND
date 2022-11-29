@@ -8,6 +8,7 @@ import MeetuptList from "../components/MeetuptList";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
 
 import Auth from "../utils/auth";
+import { setContext } from "@apollo/client/link/context";
 
 const Profile = () => {
   const { username: userParam } = useParams();
@@ -22,7 +23,10 @@ const Profile = () => {
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
-  }
+  } 
+
+  if (Auth.loggedIn() && Auth.getProfile().data.username === userParam)
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -42,8 +46,10 @@ const Profile = () => {
       <div className="flex-row justify-center mb-3">
         {/* CharForm */}
         <div className="column">
-          <CharForm />
-
+          <div className={userParam ? "hidden" : "display" }>
+            <CharForm />
+          </div>
+          
           <CharCard username={user.username} />
           <br />
         </div>
