@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // Import the `useParams()` hook
 import { useParams } from "react-router-dom";
@@ -8,11 +8,16 @@ import CommentList from "../components/CommentList";
 import CommentForm from "../components/CommentForm";
 
 import { QUERY_SINGLE_MEETUP } from "../utils/queries";
+//import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import MapComponent from "../components/MapComponent";
+import Geocode from "react-geocode";
+Geocode.setApiKey("AIzaSyDydXgSD9aepywJ9KlnLI_iHZJkNpUm84M");
 
 const SingleMeetup = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { meetupId } = useParams();
-
+  const [lat, setLat] = useState(32.71500);
+  const [lng, setLng] = useState(-117.16250);
   const { loading, data } = useQuery(QUERY_SINGLE_MEETUP, {
     // pass URL parameter
     variables: { meetupId: meetupId },
@@ -20,6 +25,20 @@ const SingleMeetup = () => {
 
   const meetup = data?.meetup || {};
 
+  useEffect(() => {
+    if(meetup.meetupAddress){
+      Geocode.fromAddress(meetup.meetupAddress).then(
+        (response) => {
+          const { lat, lng } = response.results[0].geometry.location;
+          setLat(lat);
+          setLng(lng);
+          console.log(response);
+          console.log(lat, lng);
+        }
+      )
+    }
+  }, [data]);
+  
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -76,6 +95,16 @@ const SingleMeetup = () => {
           <div className="m-3 p-4">
             <CommentForm meetupId={meetup._id} />
           </div>
+          <MapComponent
+            isMarkerShown
+            googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDydXgSD9aepywJ9KlnLI_iHZJkNpUm84M&v=3.exp&libraries=geometry,drawing,places"
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `400px` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            passedlat={lat}
+            passedlng={lng}
+          />
+          <div id="map"></div>
         </div>
       </div>
     </div>
