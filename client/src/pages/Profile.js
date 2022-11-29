@@ -11,6 +11,7 @@ import Auth from "../utils/auth";
 import { setContext } from "@apollo/client/link/context";
 
 const Profile = () => {
+
   const { username: userParam } = useParams();
 
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
@@ -43,6 +44,7 @@ const Profile = () => {
  var testData = JSON.stringify(user.charForms);
  console.log("test" + testData);
   console.log("test1" + user.charForms);
+   console.log("test2" + user);
 
  if (user.charForms.length === 0) {
    return (
