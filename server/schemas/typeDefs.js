@@ -45,7 +45,6 @@ const typeDefs = gql`
     intelligence: Int
     wisdom: Int
     charisma: Int
-    users: [User]
   }
 
   type Auth {
@@ -74,20 +73,21 @@ const typeDefs = gql`
       campaignPartySize: String!,
       meetupAddress: String!
     ): Meetup
+    
     addComment(meetupId: ID!, commentText: String!): Meetup
     addCharForm(
       name: String!,
       level: Int!,
       race: String!,
-      charClass: String,
-      alignment: String,
-      experience: Int,
-      strength: Int,
-      dexterity: Int,
-      constitution: Int,
-      intelligence: Int,
-      wisdom: Int,
-      charisma: Int
+      charClass: String!,
+      alignment: String!,
+      experience: Int!,
+      strength: Int!,
+      dexterity: Int!,
+      constitution: Int!,
+      intelligence: Int!,
+      wisdom: Int!,
+      charisma: Int!
     ): CharForm
     removeMeetup(meetupId: ID!): Meetup
     removeComment(meetupId: ID!, commentId: ID!): Meetup

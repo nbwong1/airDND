@@ -43,7 +43,7 @@ const CharForm = () => {
     console.log(charFormData);
   };
 
-  const handleFormSubmit = async (event) => {
+ const handleFormSubmit = async (event) => {
     // event.preventDefault();
     // handleSubmit(onSubmit);
     try {

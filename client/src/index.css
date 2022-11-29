@@ -339,6 +339,9 @@ template {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
 /* 
 =================
 END NORMALIZE CSS
