@@ -77,6 +77,20 @@ export const QUERY_MEETUPS = gql`
       meetupCreatedAt
       host
     }
+     charForms {
+        _id
+        name
+        level
+        charClass
+        alignment
+        experience
+        strength
+        dexterity
+        constitution
+        intelligence
+        wisdom
+        charisma
+      }
   }
 `;
 
@@ -134,6 +148,20 @@ export const QUERY_ME = gql`
         meetupAddress
         meetupCreatedAt
         host
+      }
+       charForms {
+        _id
+        name
+        level
+        charClass
+        alignment
+        experience
+        strength
+        dexterity
+        constitution
+        intelligence
+        wisdom
+        charisma
       }
     }
   }

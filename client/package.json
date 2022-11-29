@@ -12,6 +12,7 @@
     "jwt-decode": "^3.1.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^7.39.7",
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4"
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": "v16.16.0"
   }
 }
