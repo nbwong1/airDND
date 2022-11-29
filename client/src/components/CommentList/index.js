@@ -16,8 +16,15 @@ const CommentList = ({ comments = [] }) => {
       <div className="flex-row my-4">
         {comments &&
           comments.map((comment) => (
-            <div key={comment._id} className="col-12 mb-3 pb-3">
-              <div className="p-3 bg-dark text-light">
+            <div key={comment._id} className="" style={{
+              marginLeft: "40px",
+              width: "169vh"
+            }}>
+              <div className="p-4 text-light" style={{
+                borderRadius:" 15px 15px 15px 15px",
+                background: "rgb(149,0,0,100)",
+                border: "2px solid white",
+              }}>
                 <h5 className="card-header">
                   {comment.commentAuthor} commented{' '}
                   <span style={{ fontSize: '0.825rem' }}>

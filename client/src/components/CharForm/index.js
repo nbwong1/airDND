@@ -68,7 +68,7 @@ const CharForm = () => {
       if (err) {
         console.error(err);
       }
-      console.log(data);
+      // console.log(data);
       console.log(charFormData);
       setcharFormData({
         name: "",
