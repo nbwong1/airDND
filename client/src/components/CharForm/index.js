@@ -53,7 +53,7 @@ const CharForm = () => {
         },
         
       });
-\
+
       // console.log(data);
       console.log( "line 73" + charFormData);
       
