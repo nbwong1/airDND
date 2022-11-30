@@ -19,8 +19,11 @@
   "engines": {
     "node": "v16.16.0"
   },
-  "dependencies": {
+
+    "dotenv": "^16.0.3",
+
     "react-geocode": "^0.2.3",
     "react-google-maps": "^9.4.5"
+
   }
 }
