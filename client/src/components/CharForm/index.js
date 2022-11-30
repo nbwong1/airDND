@@ -53,7 +53,7 @@ const CharForm = () => {
         },
         
       });
-\
+
       // console.log(data);
       console.log( "line 73" + charFormData);
       
@@ -85,7 +85,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Name: </label>
             <input
-              type="text"
+              // type="text"
               // value={charFormData.name}
               className="form-control"
               id="formGroupExampleInput"
@@ -97,7 +97,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Level: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.level}
               className="form-control"
               id="formGroupExampleInput2"
@@ -109,7 +109,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Race: </label>
             <input
-              type="text"
+              // type="text"
               // style={
               //    {...register('race', {
               //   required: true,
@@ -157,7 +157,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Alignment: </label>
             <input
-              type="text"
+              // type="text"
               //  value={charFormData.alignment}
               className="form-control"
               id="formGroupExampleInput"
@@ -169,7 +169,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">XP: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.experience}
               className="form-control"
               id="formGroupExampleInput2"
@@ -182,7 +182,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Strength: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.strength}
               className="form-control"
               id="formGroupExampleInput2"
@@ -194,7 +194,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Dexterity: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.dexterity}
               className="form-control"
               id="formGroupExampleInput2"
@@ -206,7 +206,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Constitution: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.constitution}
               className="form-control"
               id="formGroupExampleInput2"
@@ -218,7 +218,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Intelligence: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.intelligence}
               className="form-control"
               id="formGroupExampleInput2"
@@ -242,7 +242,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Charisma: </label>
             <input
-              type="number"
+              // type="number"
                placeholder="Charisma"
               //  value={charFormData.charisma}
               className="form-control"
@@ -253,7 +253,7 @@ const CharForm = () => {
           </div>
           <button
           //  disabled={!isValid} 
-            className="btn btn-block btn-primary"
+            className="btn btn-block btn-info"
             style={{ cursor: "pointer" }}
             type="submit"
           >

@@ -155,7 +155,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
+  font-family: 'Playfair';
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -1049,7 +1049,7 @@ a:hover {
 }
 
 .btn.btn-info:hover {
-  background-color: #ffffff;
+  background-color: #a159ff;
 }
 
 .btn.btn-light {
@@ -1058,7 +1058,7 @@ a:hover {
 }
 
 .btn.btn-light:hover {
-  background-color: #ffffff;
+  background-color: #a159ff;
 }
 
 .btn.btn-dark {
@@ -1126,7 +1126,14 @@ a:hover {
 }
 
 form {
+  font-family: 'Playfair';
   width: 100%;
+}
+.formGroupExampleInput {
+  font-family: 'Playfair';
+}
+form .form-control{
+  font-family: 'Playfair';
 }
 
 form .form-group {
