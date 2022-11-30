@@ -32,7 +32,7 @@ const CharForm = () => {
     //   wisdom: 0,
     //   charisma: 0,
     // }, 
-    mode: "onChange"
+    mode: "onTouched"
   });
   // const onSubmit = data => console.log(data);
 
@@ -62,7 +62,7 @@ const CharForm = () => {
   };
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     // handleSubmit(onSubmit);
     try {
       addCharForm({
