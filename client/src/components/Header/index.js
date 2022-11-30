@@ -15,7 +15,7 @@ const Header = () => {
         <div>
           <Link className="text-light" to="/">
 
-            <h1 className="m-0">airDND</h1>
+            <h1 className="m-0">airDnD</h1>
           </Link>
           <p className="m-0">where Fantasy and Reality collide</p>
 

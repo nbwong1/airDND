@@ -41,18 +41,18 @@ const CommentForm = ({ meetupId }) => {
 
   return (
     <div>
-      <h4>What are your meetups on this meetup?</h4>
+      <h4 className='text-light' style={{textAlign: "center"}}>What are your meetups on this meetup?</h4>
 
       {Auth.loggedIn() ? (
         <>
-          <p
+          {/* <p
             className={`m-0 ${
               characterCount === 280 || error ? "text-danger" : ""
             }`}
           >
             Character Count: {characterCount}/280
             {error && <span className="ml-2">{error.message}</span>}
-          </p>
+          </p> */}
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}

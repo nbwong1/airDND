@@ -175,7 +175,7 @@ const MeetupForm = () => {
             </div>
             <br></br>
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-info btn-block py-3" type="submit">
                 Create Meetup
               </button>
             </div>

@@ -71,6 +71,7 @@ const CharForm = () => {
         },
 
       });
+
       // console.log(data);
       console.log("line 73" + charFormData);
 
@@ -98,7 +99,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Name: </label>
             <input
-              type="text"
+              // type="text"
               // value={charFormData.name}
               {...register('name', {
                 required: true,
@@ -114,7 +115,7 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Level: </label>
             <input
-              type="number"
+              // type="number"
               //  value={charFormData.level}
               {...register('level', {
                 required: true,
@@ -132,7 +133,16 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Race: </label>
             <input
-              type="text"
+
+              // type="text"
+              // style={
+              //    {...register('race', {
+              //   required: true,
+              //   pattern: {value: /[A-Za-z]/},
+              // })}
+              // }
+              
+
               //  value={charFormData.race}
               {...register('race', {
                 required: true,
@@ -180,10 +190,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput">Alignment: </label>
             <input
+
               type="text"
               {...register('alignment', {
                 required: true,
               })}
+
               //  value={charFormData.alignment}
               className="form-control"
               id="formGroupExampleInput"
@@ -196,10 +208,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">XP: </label>
             <input
+
               type="number"
               {...register('experience', {
                 required: true,
               })}
+
               //  value={charFormData.experience}
               className="form-control"
               id="formGroupExampleInput2"
@@ -213,10 +227,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Strength: </label>
             <input
+
               type="number"
               {...register('strength', {
                 required: true,
               })}
+
               //  value={charFormData.strength}
               className="form-control"
               id="formGroupExampleInput2"
@@ -229,10 +245,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Dexterity: </label>
             <input
+
               type="number"
               {...register('dexterity', {
                 required: true,
               })}
+
               //  value={charFormData.dexterity}
               className="form-control"
               id="formGroupExampleInput2"
@@ -245,10 +263,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Constitution: </label>
             <input
+
               type="number"
               {...register('constitution', {
                 required: true,
               })}
+
               //  value={charFormData.constitution}
               className="form-control"
               id="formGroupExampleInput2"
@@ -261,10 +281,12 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Intelligence: </label>
             <input
+
               type="number"
               {...register('intelligence', {
                 required: true,
               })}
+
               //  value={charFormData.intelligence}
               className="form-control"
               id="formGroupExampleInput2"
@@ -293,11 +315,13 @@ const CharForm = () => {
           <div className="form-group">
             <label htmlFor="formGroupExampleInput2">Charisma: </label>
             <input
+
               type="number"
               {...register('charisma', {
                 required: true,
               })}
               placeholder="Charisma"
+
               //  value={charFormData.charisma}
               className="form-control"
               id="formGroupExampleInput2"
@@ -308,6 +332,7 @@ const CharForm = () => {
           </div>
 
           <button
+
             //  disabled={!isValid} 
             onClick={() => setError('charisma', {
               types: {
@@ -318,6 +343,7 @@ const CharForm = () => {
               !isDirty && !isValid
             }
             className="btn btn-block btn-primary"
+
             style={{ cursor: "pointer" }}
             type="submit"
           >
