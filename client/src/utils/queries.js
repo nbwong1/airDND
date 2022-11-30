@@ -20,7 +20,6 @@ export const QUERY_USER = gql`
         _id
         name
         level
-        race
         charClass
         alignment
         experience
@@ -41,7 +40,6 @@ export const QUERY_CHARACTER = gql`
       _id
       name
       level
-      race
       charClass
       alignment
       experience
@@ -155,7 +153,6 @@ export const QUERY_ME = gql`
         _id
         name
         level
-        race
         charClass
         alignment
         experience
