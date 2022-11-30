@@ -16,7 +16,10 @@
   "devDependencies": {
     "concurrently": "^5.1.0"
   },
-    "engines": {
+  "engines": {
     "node": "v16.16.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
   }
 }
