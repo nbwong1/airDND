@@ -69,7 +69,7 @@ const CommentForm = ({ meetupId }) => {
             </div>
 
             <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+              <button className="btn btn-primary btn-info py-3" type="submit">
                 Add Comment
               </button>
             </div>
