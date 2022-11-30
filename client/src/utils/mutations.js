@@ -55,7 +55,6 @@ export const ADD_CHARACTER = gql`
       _id
       name
       level
-      race
       charClass
       alignment
       experience
